@@ -1,7 +1,8 @@
 function Card(props) {
   return (
     <div className="card-wraper">
-      <p>Card {props.number}</p>
+      <img src={props.src} alt={props.text} />
+      <p>{props.text}</p>
     </div>
   );
 }
