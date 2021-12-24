@@ -8,8 +8,10 @@ function App() {
       <header className="App-header">
         <h1>Studio Ghibli Memory Game</h1>
       </header>
-      <Scoreboard currentScore={10} bestScore={12} maxScore={18} />
-      <CardArray />
+      <div className="main-content-wrapper">
+        <Scoreboard currentScore={10} bestScore={12} maxScore={18} />
+        <CardArray />
+      </div>
     </div>
   );
 }
