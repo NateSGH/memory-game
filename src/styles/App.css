@@ -12,3 +12,7 @@
 h1 {
   margin: 20px 0 20px 30px;
 }
+
+.scoreboard-wraper {
+  align-self: flex-start;
+}

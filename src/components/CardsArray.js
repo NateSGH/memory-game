@@ -16,10 +16,12 @@ import Shizuku from '../images/Shizuku_Tsukishima.jpg';
 import Sophie from '../images/Sophie_Hatter.jpg';
 import Totoro from '../images/Totoro.jpg';
 
+import { useState, useEffect } from 'react';
+
 import '../styles/CardsGrid.css';
 
 function CardArray() {
-  let cardsArr = [
+  let initialCardsArr = [
     { id: 1, img: Arietty, name: 'Arietty', film: 'The Secret World of Arrietty (2010)' },
     { id: 2, img: Arren, name: 'Arren', film: 'Tales from Earthsea (2006)' },
     { id: 3, img: Chihiro, name: 'Chihiro', film: 'Spirited Away (2001)' },
@@ -37,6 +39,39 @@ function CardArray() {
     { id: 15, img: Sophie, name: 'Sophie', film: "Howl's Moving Castle  (2004)" },
     { id: 16, img: Totoro, name: 'Totoro', film: 'My Neighbor Totoro (1988)' },
   ];
+
+  const [cardsArr, setCardsArr] = useState(initialCardsArr);
+
+  // algorithm -> Fisher-Yates shuffle
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+
+      // swap elements array[i] and array[j]
+      // "destructuring assignment" -> same can be written as:
+      // let t = array[i]; array[i] = array[j]; array[j] = t
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  useEffect(() => {
+    let copiedArrForShuffle = cardsArr.slice();
+    shuffle(copiedArrForShuffle);
+    setCardsArr(copiedArrForShuffle);
+  }, []);
+
+  useEffect(() => {
+    const shuffleArrOnClick = () => {
+      let copiedArrForShuffle = cardsArr.slice();
+      shuffle(copiedArrForShuffle);
+      setCardsArr(copiedArrForShuffle);
+    };
+    document.querySelector('.cardGridWrapper').addEventListener('click', shuffleArrOnClick);
+
+    return () => {
+      document.querySelector('.cardGridWrapper').removeEventListener('click', shuffleArrOnClick);
+    };
+  }, [cardsArr]);
 
   return (
     <div className="cardGridWrapper">
