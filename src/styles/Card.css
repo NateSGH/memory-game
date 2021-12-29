@@ -1,15 +1,15 @@
-.card-wraper {
+.card-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: rgba(122, 122, 122, 0.5);
-  margin: 0 0 5px 0;
+  margin: 2px;
   padding: 5px;
   border-radius: 10px;
   width: fit-content;
 }
 
-.card-wraper p {
+.card-wrapper p {
   margin: 5px 0 0 0;
   text-align: center;
 }
@@ -18,4 +18,32 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+@media (max-height: 1340px) {
+  img {
+    width: 230px;
+    height: auto;
+  }
+}
+
+@media (max-height: 1275px) {
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+@media (max-height: 1140px) {
+  img {
+    width: 170px;
+    height: auto;
+  }
+}
+
+@media (max-height: 1020px) {
+  img {
+    width: 150px;
+    height: auto;
+  }
 }

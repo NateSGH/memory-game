@@ -5,5 +5,25 @@
   grid-template-rows: repeat(4, 1fr);
   align-items: center;
   justify-items: center;
-  column-gap: 10px;
+}
+
+@media (min-width: 1340px) {
+  .cardGridWrapper {
+    width: 1075px;
+  }
+}
+
+@media (max-height: 950px) {
+  .cardGridWrapper {
+    width: 95vw;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 100%;
+  }
+}
+
+@media (max-height: 1140px) and (min-width: 1340px) {
+  .cardGridWrapper {
+    width: 40vw;
+  }
 }

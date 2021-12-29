@@ -1,4 +1,8 @@
 import Card from './Card';
+import { useState, useEffect } from 'react';
+
+import '../styles/CardsGrid.css';
+
 import Arietty from '../images/Arietty.jpg';
 import Arren from '../images/Arren.jpg';
 import Chihiro from '../images/Chihiro_Ogino.jpg';
@@ -16,11 +20,7 @@ import Shizuku from '../images/Shizuku_Tsukishima.jpg';
 import Sophie from '../images/Sophie_Hatter.jpg';
 import Totoro from '../images/Totoro.jpg';
 
-import { useState, useEffect } from 'react';
-
-import '../styles/CardsGrid.css';
-
-function CardArray() {
+function CardArray(props) {
   let initialCardsArr = [
     { id: 1, img: Arietty, name: 'Arietty', film: 'The Secret World of Arrietty (2010)' },
     { id: 2, img: Arren, name: 'Arren', film: 'Tales from Earthsea (2006)' },
@@ -41,6 +41,7 @@ function CardArray() {
   ];
 
   const [cardsArr, setCardsArr] = useState(initialCardsArr);
+  const [cardsWrapperKey, setCardsWrapperKey] = useState(0);
 
   // algorithm -> Fisher-Yates shuffle
   function shuffle(array) {
@@ -52,6 +53,16 @@ function CardArray() {
       // let t = array[i]; array[i] = array[j]; array[j] = t
       [array[i], array[j]] = [array[j], array[i]];
     }
+  }
+
+  function updateScore() {
+    props.updateCurrentScore(props.currentScore + 1);
+  }
+
+  function resetScore() {
+    let nextKey = cardsWrapperKey + 1;
+    setCardsWrapperKey(nextKey);
+    props.resetScore();
   }
 
   useEffect(() => {
@@ -66,17 +77,28 @@ function CardArray() {
       shuffle(copiedArrForShuffle);
       setCardsArr(copiedArrForShuffle);
     };
-    document.querySelector('.cardGridWrapper').addEventListener('click', shuffleArrOnClick);
+
+    document.querySelectorAll('.card-wrapper').forEach((card) => {
+      card.addEventListener('click', shuffleArrOnClick);
+    });
 
     return () => {
-      document.querySelector('.cardGridWrapper').removeEventListener('click', shuffleArrOnClick);
+      document.querySelectorAll('.card-wrapper').forEach((card) => {
+        card.removeEventListener('click', shuffleArrOnClick);
+      });
     };
-  }, [cardsArr]);
+  }, [cardsArr, props]);
 
   return (
-    <div className="cardGridWrapper">
+    <div key={cardsWrapperKey} className="cardGridWrapper">
       {cardsArr.map((item) => (
-        <Card key={item.id} src={item.img} name={item.name} />
+        <Card
+          key={item.id}
+          src={item.img}
+          name={item.name}
+          resetScore={resetScore}
+          updateScore={updateScore}
+        />
       ))}
     </div>
   );
