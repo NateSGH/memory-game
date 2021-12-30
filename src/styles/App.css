@@ -1,8 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+:root {
+  --app-bacground-color: rgba(166, 96, 70, 0.1);
+  --header-bottom-border-color: #260101;
+  --header-font-color: #260101;
+}
+
+html {
+  background-color: var(--app-bacground-color);
+}
 
 .App {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 .main-content-wrapper {
   display: flex;
   flex-direction: column;
@@ -10,10 +21,24 @@
   height: 100%;
 }
 
+header {
+  border-bottom: 1px solid var(--header-bottom-border-color);
+}
+
 h1 {
-  margin: 20px 0 20px 30px;
+  padding: 20px 0 20px 30px;
+  margin: 0;
+  color: var(--header-font-color);
+  font-size: 35px;
 }
 
 .scoreboard-wraper {
-  align-self: flex-start;
+  align-self: center;
+}
+
+@media (max-height: 850px) and (max-width: 450px) {
+  h1 {
+    padding: 10px 0 10px 30px;
+    font-size: 25px;
+  }
 }
