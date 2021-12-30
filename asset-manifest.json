@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/memory-game/static/css/main.10dff614.css",
+    "main.js": "/memory-game/static/js/main.00017dfd.js",
+    "static/media/Kiki.png": "/memory-game/static/media/Kiki.c052c010a8fb5d77e894.png",
+    "static/media/Jirou_Horikoshi.png": "/memory-game/static/media/Jirou_Horikoshi.4595c1c631ad54ed7f4a.png",
+    "static/media/Chihiro_Ogino.jpg": "/memory-game/static/media/Chihiro_Ogino.bcb55c0c25de664b2e5e.jpg",
+    "static/media/Mononoke.jpg": "/memory-game/static/media/Mononoke.df849020f445d25e4938.jpg",
+    "static/media/Howl.jpg": "/memory-game/static/media/Howl.e10192535cce979fb8dc.jpg",
+    "static/media/Arietty.jpg": "/memory-game/static/media/Arietty.fbbe6e37a5e95644ffce.jpg",
+    "static/media/Porco_Rosso.jpg": "/memory-game/static/media/Porco_Rosso.d6de242a72bfb8cb2077.jpg",
+    "static/media/Sophie_Hatter.jpg": "/memory-game/static/media/Sophie_Hatter.c4ec2048aeb5ee5ae64c.jpg",
+    "static/media/Nausicaä.jpg": "/memory-game/static/media/Nausicaä.093e9d19cae4f425b918.jpg",
+    "static/media/Shizuku_Tsukishima.jpg": "/memory-game/static/media/Shizuku_Tsukishima.54a3bcaa6889875a4d71.jpg",
+    "static/media/Ponyo.jpg": "/memory-game/static/media/Ponyo.4ee5ce0f25784a354c47.jpg",
+    "static/media/Sheeta.jpg": "/memory-game/static/media/Sheeta.33e29a412daffbf59fc2.jpg",
+    "static/media/Arren.jpg": "/memory-game/static/media/Arren.a77551903ebaa6345886.jpg",
+    "static/media/No-Face.jpg": "/memory-game/static/media/No-Face.c507a8b0a072bda929e0.jpg",
+    "static/media/Seiji_Amasawa.jpg": "/memory-game/static/media/Seiji_Amasawa.57ddee20daefbe8f696e.jpg",
+    "static/media/Totoro.jpg": "/memory-game/static/media/Totoro.21b253bcc14edc7b9667.jpg",
+    "index.html": "/memory-game/index.html",
+    "main.10dff614.css.map": "/memory-game/static/css/main.10dff614.css.map",
+    "main.00017dfd.js.map": "/memory-game/static/js/main.00017dfd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10dff614.css",
+    "static/js/main.00017dfd.js"
+  ]
+}
