@@ -4,6 +4,8 @@ A React app which puts your memory to the test. There are multiple cards with im
 
 This project is a part of [The Odin Project](https://www.theodinproject.com/)'s curriculum.
 
+_The Odin Project: The main goal of this project is to use hooks or lifecycle methods as well as a lot of state_
+
 ## Build With
 
 - [React](https://reactjs.org/)
